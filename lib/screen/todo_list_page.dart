@@ -21,8 +21,11 @@ class _TodoListPageState extends State<TodoListPage> {
 
   setDataListCatatan()async{
     var db = new DatabaseHelper();
-
-    catatanRes = await db.selectCatatan(GeneralSharedPreferences.readInt("user_id"));
+    List<Map<String, dynamic>> catatanData;
+    catatanData = await db.selectCatatan(GeneralSharedPreferences.readInt("user_id"));
+    setState(() {
+      catatanRes = catatanData;
+    });
     if(catatanRes != null){
       print(catatanRes);
       print("ada catatan res");
