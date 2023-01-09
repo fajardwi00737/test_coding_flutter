@@ -28,9 +28,8 @@ class _TodoListPageState extends State<TodoListPage> {
     });
     if(catatanRes != null){
       print(catatanRes);
-      print("ada catatan res");
     } else {
-      print("tidak ada catatan res");
+      print("tidak ada catatan");
     }
   }
   @override
